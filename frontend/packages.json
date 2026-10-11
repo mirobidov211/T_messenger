@@ -1,0 +1,81 @@
+{
+  "version": "0.0.0",
+  "name": "messenger-frontend",
+  "dependencies": {
+    "@vitejs/plugin-react": {
+      "version": "4.7.0",
+      "resolved": "https://registry.npmjs.org/@vitejs/plugin-react/-/plugin-react-4.7.0.tgz",
+      "overridden": false
+    },
+    "autoprefixer": {
+      "version": "10.5.5",
+      "resolved": "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.5.5.tgz",
+      "overridden": false
+    },
+    "axios": {
+      "version": "1.20.0",
+      "resolved": "https://registry.npmjs.org/axios/-/axios-1.20.0.tgz",
+      "overridden": false
+    },
+    "clsx": {
+      "version": "2.1.1",
+      "resolved": "https://registry.npmjs.org/clsx/-/clsx-2.1.1.tgz",
+      "overridden": false
+    },
+    "date-fns": {
+      "version": "2.30.0",
+      "resolved": "https://registry.npmjs.org/date-fns/-/date-fns-2.30.0.tgz",
+      "overridden": false
+    },
+    "lucide-react": {
+      "version": "0.294.0",
+      "resolved": "https://registry.npmjs.org/lucide-react/-/lucide-react-0.294.0.tgz",
+      "overridden": false
+    },
+    "postcss": {
+      "version": "8.5.28",
+      "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.28.tgz",
+      "overridden": false
+    },
+    "prop-types": {
+      "version": "15.8.1",
+      "resolved": "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz",
+      "overridden": false
+    },
+    "react-dom": {
+      "version": "18.3.1",
+      "resolved": "https://registry.npmjs.org/react-dom/-/react-dom-18.3.1.tgz",
+      "overridden": false
+    },
+    "react-router-dom": {
+      "version": "6.30.6",
+      "resolved": "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.30.6.tgz",
+      "overridden": false
+    },
+    "react-use-websocket": {
+      "version": "4.13.0",
+      "resolved": "https://registry.npmjs.org/react-use-websocket/-/react-use-websocket-4.13.0.tgz",
+      "overridden": false
+    },
+    "react": {
+      "version": "18.3.1",
+      "resolved": "https://registry.npmjs.org/react/-/react-18.3.1.tgz",
+      "overridden": false
+    },
+    "tailwindcss": {
+      "version": "3.4.19",
+      "resolved": "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.19.tgz",
+      "overridden": false
+    },
+    "vite": {
+      "version": "5.4.21",
+      "resolved": "https://registry.npmjs.org/vite/-/vite-5.4.21.tgz",
+      "overridden": false
+    },
+    "zustand": {
+      "version": "4.5.7",
+      "resolved": "https://registry.npmjs.org/zustand/-/zustand-4.5.7.tgz",
+      "overridden": false
+    }
+  }
+}
