@@ -89,7 +89,6 @@ PyRect==0.2.0
 PyScreeze==1.0.1
 python-decouple==3.8
 pytweening==1.2.0
-pywin32==311
 redis==8.1.0
 requests==2.32.4
 Send2Trash==2.1.0
