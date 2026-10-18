@@ -1,1 +1,7 @@
-Django==5.2.3
+django>=4.2,<5.0
+djangorestframework
+gunicorn
+whitenoise
+django-cors-headers
+psycopg2-binary
+python-decouple
