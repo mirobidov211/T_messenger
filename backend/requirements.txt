@@ -84,7 +84,6 @@ PyMsgBox==2.0.1
 pyOpenSSL==26.4.0
 pyparsing==3.3.2
 pyperclip==1.11.0
-pypiwin32==223
 PyRect==0.2.0
 PyScreeze==1.0.1
 python-decouple==3.8
