@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 set -o errexit
 
-# 1. Django talablarini o'rnatish
-cd backend
-pip install -r requirements.txt
+# Pip, setuptools va wheel ni yangilash
+python -m pip install --upgrade pip setuptools wheel
 
+# Kutubxonalarni o'rnatish
+pip install -r backend/requirements.txt
+
+# Frontendi yig'ish va static fayllarni ko'chirish qismlari...
 # 2. React ni o'rnatish va build qilish
 cd ../frontend
 npm install
