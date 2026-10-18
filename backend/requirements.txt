@@ -3,7 +3,6 @@ annotated-types==0.7.0
 anyio==4.9.0
 asgiref==3.12.1
 attrs==26.1.0
-autobahn==26.7.1
 Automat==25.4.16
 beautifulsoup4==4.14.3
 cbor2==6.1.4
