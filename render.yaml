@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: django-react-app
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn backend.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.4
