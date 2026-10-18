@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -o errexit
 
-# Pip, setuptools va wheel ni yangilash
-python -m pip install --upgrade pip setuptools wheel
-
-# Kutubxonalarni o'rnatish
+pip install --upgrade pip setuptools wheel
 pip install -r backend/requirements.txt
+
+python backend/manage.py collectstatic --no-input
+python backend/manage.py migrate
 
 # Frontendi yig'ish va static fayllarni ko'chirish qismlari...
 # 2. React ni o'rnatish va build qilish
