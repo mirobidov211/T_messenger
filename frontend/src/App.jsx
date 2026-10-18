@@ -4,6 +4,7 @@ import RegisterPage from './pages/RegisterPage';
 import ChatPage from './pages/ChatPage';
 import PrivateRoute from './components/layout/PrivateRoute';
 import { useAuthStore } from './store/authStore';
+import { getUserApi } from './api/auth';
 import { useEffect } from 'react';
 
 function App() {
@@ -11,6 +12,18 @@ function App() {
   
   useEffect(() => {
     loadUser();
+    const token = useAuthStore.getState().accessToken;
+    if (token) {
+      getUserApi()
+        .then((userData) => {
+          if (userData) {
+            useAuthStore.getState().updateUser(userData);
+          }
+        })
+        .catch((e) => {
+          console.warn("Could not load fresh user profile:", e);
+        });
+    }
   }, [loadUser]);
 
   return (

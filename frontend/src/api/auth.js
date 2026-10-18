@@ -14,3 +14,11 @@ export const getUserApi = async () => {
   const { data } = await api.get('/auth/me/');
   return data;
 };
+
+export const updateProfileApi = async (data) => {
+  const isFormData = data instanceof FormData;
+  const res = await api.patch('/auth/profile/', data, {
+    headers: isFormData ? { 'Content-Type': 'multipart/form-data' } : {},
+  });
+  return res.data;
+};

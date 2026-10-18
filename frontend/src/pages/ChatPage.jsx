@@ -1,13 +1,15 @@
 import { useEffect } from 'react';
 import Sidebar from '../components/layout/Sidebar';
 import ChatWindow from '../components/chat/ChatWindow';
+import TelegramDrawer from '../components/layout/TelegramDrawer';
+import BottomNavBar from '../components/layout/BottomNavBar';
 import { useChats } from '../hooks/useChats';
 import { useUiStore } from '../store/uiStore';
 import { searchUsersApi } from '../api/chats';
 
 const ChatPage = () => {
   const { chats, activeChat, setActiveChat, startChatWithUser } = useChats();
-  const setSidebarOpen = useUiStore((state) => state.setSidebarOpen);
+  const { setSidebarOpen, isDrawerOpen, setIsDrawerOpen } = useUiStore();
 
   // Linkdagi #username o'zgarganda yoki sahifa yuklanganda tegishli chatni ochish
   useEffect(() => {
@@ -56,9 +58,20 @@ const ChatPage = () => {
   }, [chats, activeChat, setActiveChat, setSidebarOpen, startChatWithUser]);
 
   return (
-    <div className="h-screen w-full flex bg-telegram-darker overflow-hidden text-white">
-      <Sidebar />
-      <ChatWindow />
+    <div className="h-screen w-full flex flex-col lg:flex-row bg-telegram-darker overflow-hidden text-white relative">
+      <div className="flex-1 flex overflow-hidden">
+        <Sidebar />
+        <ChatWindow />
+      </div>
+
+      {/* Telefon versiyasida pastki navigatsiya paneli (chat ochilmagan paytda) */}
+      {!activeChat && <BottomNavBar />}
+
+      {/* Uchta chiziqcha bosilganda ochiladigan Telegram Drawer menyusi */}
+      <TelegramDrawer
+        isOpen={isDrawerOpen}
+        onClose={() => setIsDrawerOpen(false)}
+      />
     </div>
   );
 };
