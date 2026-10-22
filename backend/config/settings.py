@@ -11,6 +11,8 @@ SECRET_KEY = config('SECRET_KEY', default='django-insecure-secret')
 DEBUG = config('DEBUG', default=True, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
 
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 
 INSTALLED_APPS = [
     'daphne',
@@ -76,15 +78,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 ASGI_APPLICATION = 'config.asgi.application'
 
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get(
-            'DATABASE_URL',
-            f"postgres://{config('DB_USER', default='postgres')}:{config('DB_PASSWORD', default='postgres')}@{config('DB_HOST', default='localhost')}:{config('DB_PORT', default='5432')}/{config('DB_NAME', default='messenger_db')}"
-        ),
+    "default": dj_database_url.config(
+        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
         conn_max_age=600,
-        ssl_require=True
+        ssl_require=bool(os.environ.get("DATABASE_URL")),
     )
 }
 
