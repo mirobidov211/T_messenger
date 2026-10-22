@@ -3,15 +3,11 @@ from pathlib import Path
 from decouple import config
 from datetime import timedelta
 
-import dj_database_url
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-secret')
 DEBUG = config('DEBUG', default=True, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
-
-STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 INSTALLED_APPS = [
@@ -79,11 +75,14 @@ WSGI_APPLICATION = 'config.wsgi.application'
 ASGI_APPLICATION = 'config.asgi.application'
 
 DATABASES = {
-    "default": dj_database_url.config(
-        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
-        conn_max_age=600,
-        ssl_require=bool(os.environ.get("DATABASE_URL")),
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DB_NAME', default='messenger_db'),
+        'USER': config('DB_USER', default='postgres'),
+        'PASSWORD': config('DB_PASSWORD', default='postgres'),
+        'HOST': config('DB_HOST', default='localhost'),
+        'PORT': config('DB_PORT', default='5432'),
+    }
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -102,11 +101,6 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
-# React build papkasini staticlarga qo'shamiz
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '../frontend/dist'), 
-]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
