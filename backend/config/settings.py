@@ -111,6 +111,14 @@ CORS_ALLOWED_ORIGINS = [
     "https://messenger-eta-livid.vercel.app",
 ]
 
+ALLOWED_HOSTS = [
+    "messenger-backend-ten.vercel.app"
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://messenger-eta-livid.vercel.app",
+]
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
