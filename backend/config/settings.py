@@ -108,7 +108,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.User'
 
 CORS_ALLOWED_ORIGINS = [
-    "https://messenger-eta-livid.vercel.app/login",
+    "https://messenger-eta-livid.vercel.app",
 ]
 
 REST_FRAMEWORK = {
